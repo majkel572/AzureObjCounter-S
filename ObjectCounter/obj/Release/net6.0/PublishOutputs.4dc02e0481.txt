@@ -1,0 +1,7 @@
+F:\ObjectCounter\ObjectCounter\ObjectCounter\obj\Release\net6.0\PubTmp\Out\AzureObjCounter-S.exe
+F:\ObjectCounter\ObjectCounter\ObjectCounter\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+F:\ObjectCounter\ObjectCounter\ObjectCounter\obj\Release\net6.0\PubTmp\Out\appsettings.json
+F:\ObjectCounter\ObjectCounter\ObjectCounter\obj\Release\net6.0\PubTmp\Out\AzureObjCounter-S.dll
+F:\ObjectCounter\ObjectCounter\ObjectCounter\obj\Release\net6.0\PubTmp\Out\AzureObjCounter-S.deps.json
+F:\ObjectCounter\ObjectCounter\ObjectCounter\obj\Release\net6.0\PubTmp\Out\AzureObjCounter-S.runtimeconfig.json
+F:\ObjectCounter\ObjectCounter\ObjectCounter\obj\Release\net6.0\PubTmp\Out\AzureObjCounter-S.pdb

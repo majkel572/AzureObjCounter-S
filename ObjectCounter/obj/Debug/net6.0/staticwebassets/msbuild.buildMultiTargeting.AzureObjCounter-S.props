@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AzureObjCounter-S.props" />
+</Project>

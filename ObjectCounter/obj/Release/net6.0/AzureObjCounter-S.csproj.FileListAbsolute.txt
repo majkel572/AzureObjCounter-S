@@ -60,3 +60,12 @@ F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\obj\Release\net6.0\refint\Azure
 F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\obj\Release\net6.0\AzureObjCounter-S.pdb
 F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\obj\Release\net6.0\AzureObjCounter-S.genruntimeconfig.cache
 F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\obj\Release\net6.0\ref\AzureObjCounter-S.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\bin\Release\net6.0\Azure.Core.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\bin\Release\net6.0\Azure.Storage.Blobs.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\bin\Release\net6.0\Azure.Storage.Common.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\bin\Release\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\bin\Release\net6.0\Newtonsoft.Json.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\bin\Release\net6.0\System.IO.Hashing.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\bin\Release\net6.0\System.Memory.Data.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\bin\Release\net6.0\Microsoft.WindowsAzure.Storage.dll
+F:\ObjectCounter\AzureObjCounter-S\ObjectCounter\obj\Release\net6.0\AzureObjCounter-S.csproj.CopyComplete

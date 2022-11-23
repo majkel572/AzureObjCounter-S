@@ -1,7 +1,14 @@
+using Azure.Storage.Blobs;
+using System.Web;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddControllers();
 
 // Add services to the container.
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddRazorPages();
+
+
 
 var app = builder.Build();
 
@@ -20,5 +27,19 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.MapPost("/api/upload", (IConfiguration config, HttpContext hc) => {
+        var formData = hc.Request.Form;     // download content from request
+        if (formData.Files.Count == 1) {          // if it has file get it
+            var image = formData.Files[0];
+            var blobServiceClient = new BlobServiceClient(config.GetValue<string>("blobConnectionString")); // handle for blob service
+            var containerClient = blobServiceClient.GetBlobContainerClient(config.GetValue<string>("blobContainerName")); // handle for container
+            string blobName = "countHere.jpg"; // blob name to process
+            using var imageStream = image.OpenReadStream(); // change image to openstream
+            containerClient.UploadBlob(blobName, imageStream); // pass image with its name 
+        return "done";
+        }
+        return "not done";
+});
 
 app.Run();

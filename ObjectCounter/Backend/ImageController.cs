@@ -31,7 +31,7 @@ public class ImageController : ControllerBase {
     public async Task<ActionResult> UploadImage(IFormFile file) {
         var blobServiceClient = new BlobServiceClient(connectionString);
         var containerClient = blobServiceClient.GetBlobContainerClient(containerName);
-        string blobName = "countHere";
+        string blobName = "xxx";
         using var fileStream = file.OpenReadStream();
         containerClient.UploadBlob(blobName, fileStream);
         return Ok();

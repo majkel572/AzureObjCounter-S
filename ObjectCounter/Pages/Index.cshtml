@@ -5,6 +5,21 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Dżem dobry to nasz object counter super aplikacja B) tak</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Take or select a photo</h1>
+    <form
+        name="form1"
+        method="post"
+        enctype="multipart/form-data"
+        action="/api/upload/"
+        >
+        <div>
+            <input class="submit" name="file" type="file" />
+        </div>
+        <div>
+            <input class="submit" type="submit" value="Count" />
+        </div>
+
+    </form>
 </div>
+
+

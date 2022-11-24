@@ -34,8 +34,8 @@ app.MapPost("/api/upload", (IConfiguration config, HttpContext hc) => {
             var image = formData.Files[0];
             var blobServiceClient = new BlobServiceClient(config.GetValue<string>("blobConnectionString")); // handle for blob service
             var containerClient = blobServiceClient.GetBlobContainerClient(config.GetValue<string>("blobContainerName")); // handle for container
-            string blobName = "countHere.jpg"; // blob name to process
             using var imageStream = image.OpenReadStream(); // change image to openstream
+            string blobName = image.FileName; // blob name to process
             containerClient.UploadBlob(blobName, imageStream); // pass image with its name 
         return "done";
         }

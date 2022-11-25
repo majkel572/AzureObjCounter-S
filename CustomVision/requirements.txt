@@ -1,0 +1,5 @@
+azure-storage-blob
+PIL
+requests
+msrest
+azure-cognitiveservices-vision-customvision

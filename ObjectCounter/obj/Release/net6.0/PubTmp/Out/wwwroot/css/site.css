@@ -11,8 +11,37 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  display: table;
+  margin: auto;
 }
 
 body {
   margin-bottom: 60px;
+  width: 800px;
+  display: table-cell;
+}
+
+.form-button {
+  background-color: #008ad7; 
+  border: 5px solid #008ad7;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 10px 2px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+}
+
+.form-button:hover {
+  background-color: white; 
+  color: black; 
+}
+
+.form-button {
+  background-color: #008ad7;
+  color: white;
 }

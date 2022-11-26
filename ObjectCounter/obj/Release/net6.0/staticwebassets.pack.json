@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "F:\\ObjectCounter\\AzureObjCounter-S\\ObjectCounter\\wwwroot\\vision-customvision.png",
+      "PackagePath": "staticwebassets\\vision-customvision.png"
+    },
+    {
       "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.AzureObjCounter-S.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

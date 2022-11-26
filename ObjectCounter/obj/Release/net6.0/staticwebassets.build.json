@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/rvGlvqVDRYpbB25hx9dCKdJ5mKNDcveEbrYujw/2ng=",
+  "Hash": "ZZQm1wy7WMdtvudXJTldnlAhUvNTFC8tEGZlabHqh8c=",
   "Source": "AzureObjCounter-S",
   "BasePath": "_content/AzureObjCounter-S",
   "Mode": "Default",
@@ -1069,6 +1069,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "F:\\ObjectCounter\\AzureObjCounter-S\\ObjectCounter\\wwwroot\\vision-customvision.png",
+      "SourceId": "AzureObjCounter-S",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\ObjectCounter\\AzureObjCounter-S\\ObjectCounter\\wwwroot\\",
+      "BasePath": "_content/AzureObjCounter-S",
+      "RelativePath": "vision-customvision.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\vision-customvision.png"
     }
   ]
 }

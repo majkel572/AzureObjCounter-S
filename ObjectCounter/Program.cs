@@ -1,4 +1,8 @@
+using Azure.Storage;
 using Azure.Storage.Blobs;
+using Azure.Storage.Sas;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System;
 using System.Diagnostics;
 using System.Web;
 
@@ -43,19 +47,51 @@ app.MapPost("/api/upload", (IConfiguration config, HttpContext hc) => {
             } catch (Azure.RequestFailedException e){
                 return "Azure blob storage already contains this file!";
             }
-            counter++;
-            Thread.Sleep(2000);
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = "dist/customvision.exe";
-            start.Arguments = string.Format("{0}", blobName);
-            start.UseShellExecute = false;
-            start.RedirectStandardOutput = true;
-            using (Process process = Process.Start(start)) {
-            using (StreamReader reader = process.StandardOutput) {
-                result = reader.ReadToEnd();
-                Console.Write(result);
-            }
-        }
+        Thread.Sleep(1000);
+
+        // sas maker
+        BlobSasBuilder blobSasBuilder = new BlobSasBuilder() {
+            BlobContainerName = config.GetValue<string>("blobContainerName"),
+            BlobName = blobName,
+            ExpiresOn = DateTime.UtcNow.AddMinutes(5),//Let SAS token expire after 5 minutes.
+        };
+        blobSasBuilder.SetPermissions(BlobSasPermissions.Read);//User will only be able to read the blob and it's properties
+        var sasToken = blobSasBuilder.ToSasQueryParameters(new StorageSharedKeyCredential(config.GetValue<string>("blobContainerName"), config.GetValue<string>("blobConnectionString"))).ToString();
+        var sasUrl = blobServiceClient.Uri.AbsoluteUri + "?" + sasToken;
+        // end of sas maker
+
+        var prediction_endpoint = "https://customvisiondetector-prediction.cognitiveservices.azure.com/";
+        var prediction_key = "480c10e29ebd486b90bea83ca6d082e1";
+        var project_id = "aee14dc7-79af-4b9f-b42a-cfd8147dd022";
+        var model_name = "Iteration1";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //Thread.Sleep(2000);
+        // ProcessStartInfo start = new ProcessStartInfo();
+        //start.FileName = "dist/customvision.exe";
+        //start.Arguments = string.Format("{0}", blobName);
+        //start.UseShellExecute = false;
+        //start.RedirectStandardOutput = true;
+        // using (Process process = Process.Start(start)) {
+        //using (StreamReader reader = process.StandardOutput) {
+        //    result = reader.ReadToEnd();
+        //    Console.Write(result);
+        //}
+        //}
+        counter++;
         return result;
         }
         return "not done";

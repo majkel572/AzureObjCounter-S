@@ -4,7 +4,10 @@ Celem projektu jest ułatwienie ludziom liczenia owoców i warzyw na zdjęciach.
 ## Opis projektu
 Użytkownik może zamieścić wybrane zdjęcie z wybranymi owocami lub warzywami na naszej stronie internetowej, która przekaże to zdjęcie do bloba. Stamtąd jest ona przekazywana do wytrenowanego modelu Custom Vision, następnie wynik jest przekazywany spowrotem na stronę, prosto do użytkownika.
 ## Schemat działania naszego rozwiązania
-
+- Użytkownik wybiera zdjęcie z owocami lub warzywami
+- Serwis przesyła je do Custom Vision
+- Dostajemy odpowiedź w postaci pliku json z wykrytymi obiektami
+- Wyświetlamy odpowiedź na stronie
 ## Diagram architektury
 ![316431571_508896637964841_6962589888494709220_n](https://user-images.githubusercontent.com/73585472/204158222-f5066195-ce66-4457-a8c2-8f614bc4851e.png)
 

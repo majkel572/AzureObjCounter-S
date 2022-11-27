@@ -17,8 +17,8 @@ Przechowuje obiekty, z których w prosty sposób można korzystać w chmurze - s
 Pozwala na wytrenowanie modelu do wykrywania wybranych obiektów na zdjęciach, udostępnia API aby móc w łatwy sposób odebrać wymagane wyniki.
 
 ## Zespół
-Jakub Urbański https://github.com/urbanski220
-Jakub Goliszewski https://github.com/jgoliszewski
-Mikołaj Guryn https://github.com/Majkel572
+Jakub Urbański https://github.com/urbanski220<br />
+Jakub Goliszewski https://github.com/jgoliszewski<br />
+Mikołaj Guryn https://github.com/Majkel572<br />
 
 ## Link do demo rozwiązania

@@ -6,22 +6,9 @@
 
 <div class="text-center">
     <h1 class="display-4">Take or select a photo</h1>
-    <form
-        name="form1"
-        method="post"
-        enctype="multipart/form-data"
-        action="/api/upload/"
-        >
-        <div>
-            <input type="file" name="file" id="selectedFile" style="display: none;" onchange="readImage(this);" />
-            <input class="form-button" type="button" value="Choose file" onclick="document.getElementById('selectedFile').click();" /> 
-        </div>
+    <div>
+        <input type="file" name="file" id="selectedFile" style="display: none;" onchange="readImage(this);" />
+        <input class="form-button" type="button" value="Choose file" onclick="document.getElementById('selectedFile').click();" /> 
+    </div>
         <img id="blah" src="vision-customvision.png"/>
-        <div>
-            <input class="form-button" type="submit" value="Send" />
-        </div>
-
-    </form>
 </div>
-
-

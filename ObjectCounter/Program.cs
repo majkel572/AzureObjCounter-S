@@ -1,5 +1,10 @@
 using Azure.Storage.Blobs;
+using AzureObjCounterS;
 using System.Diagnostics;
+using System.Net;
+using System.Runtime.Serialization.Json;
+using System.Text;
+using System.Text.Json;
 using System.Web;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -45,16 +50,39 @@ app.MapPost("/api/upload", (IConfiguration config, HttpContext hc) => {
             }
             counter++;
             Thread.Sleep(2000);
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = "dist/customvision.exe";
-            start.Arguments = string.Format("{0}", blobName);
-            start.UseShellExecute = false;
-            start.RedirectStandardOutput = true;
-            using (Process process = Process.Start(start)) {
-            using (StreamReader reader = process.StandardOutput) {
-                result = reader.ReadToEnd();
-                Console.Write(result);
-            }
+        WebRequest request = HttpWebRequest.Create("https://customvisiondetector-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/aee14dc7-79af-4b9f-b42a-cfd8147dd022/detect/iterations/Iteration1/image");
+        request.Method = "POST";
+        request.Headers.Add("Prediction-Key", "480c10e29ebd486b90bea83ca6d082e1");
+        request.Headers.Add("Content-Type", "application/octet-stream");
+        var f = image.OpenReadStream();
+        using (var ms = new MemoryStream()) {
+            f.CopyTo(ms);
+            var fileBytes = ms.ToArray();
+            request.ContentLength = fileBytes.Length;
+            Stream stream = request.GetRequestStream();
+            stream.Write(fileBytes, 0, fileBytes.Length);
+            stream.Close();
+        }
+        HttpWebResponse response = (HttpWebResponse)request.GetResponseAsync().Result;
+        string json = new StreamReader(response.GetResponseStream()).ReadToEnd();
+        Console.WriteLine(json);
+        ResponseJson? jsonResponse = JsonSerializer.Deserialize<ResponseJson>(json);
+        List<Predictions> predictionList = jsonResponse.predictions;
+
+        var stats = new Dictionary<string, double>();
+        foreach (Predictions rjn in predictionList) {
+            if (rjn.probability * 100 > 50)
+                if (stats.ContainsKey(rjn.tagName)) {
+                    stats[rjn.tagName]++;
+                } else {
+                    stats[rjn.tagName] = 1;
+                }
+        }
+
+        DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Dictionary<string, double>));
+        using (MemoryStream ms = new MemoryStream()) {
+            serializer.WriteObject(ms, stats);
+            result = Encoding.Default.GetString(ms.ToArray());
         }
         return result;
         }

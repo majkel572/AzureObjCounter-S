@@ -24,6 +24,6 @@ Pozwala na wytrenowanie modelu do wykrywania wybranych obiektów na zdjęciach, 
 ## Zespół
 Jakub Urbański https://github.com/urbanski220<br />
 Jakub Goliszewski https://github.com/jgoliszewski<br />
-Mikołaj Guryn https://github.com/Majkel572<br />
+Mikołaj Guryn https://github.com/majkel572<br />
 
 ## Link do demo rozwiązania
